@@ -11,6 +11,7 @@
             }*/
             Pomdro pomdro = new Pomdro();
             pomdro.play();
+            pomdro.getWorkLog();
         }
     }
 }

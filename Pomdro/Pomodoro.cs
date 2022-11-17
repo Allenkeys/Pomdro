@@ -10,6 +10,7 @@ namespace Pomdro
     {
         public int workTimer;
         public int restTimer;
+        public List<string> worktimeLog = new List<string>();
 
         public void play()
         {
@@ -34,7 +35,8 @@ namespace Pomdro
         public void startWork()
         {
             var workTime = new DateTime(2000, 1, 1, 0, workTimer, 0);
-
+            DateTime workStartTime = DateTime.Now;
+            worktimeLog.Add(Convert.ToString("Work start instance: " + workStartTime));
             for (int i = 0; i < workTimer * 60; i++)
             {
                 Console.Write("Work Time Remains : {0}", workTime.ToString("mm:ss"));
@@ -42,19 +44,36 @@ namespace Pomdro
                 Thread.Sleep(1000);
                 Console.Clear();
             }
+            Console.Beep(2000, 1000);
+            DateTime workEndTime = DateTime.Now;
+            worktimeLog.Add(Convert.ToString("Work end instance: " + workEndTime));
         }
 
         public void startRest()
         {
+            DateTime restStartTime = DateTime.Now;
+            worktimeLog.Add(Convert.ToString("Rest start instance: " + restStartTime));
             var restTime = new DateTime(2000, 1, 1, 0, restTimer, 0);
-            for (int i = 0; i < workTimer * 60; i++)
+            for (int i = 0; i < restTimer * 60; i++)
             {
-                Console.Write($"Rest Time Remains : {0}", restTime.ToString("mm:ss"));
+                Console.Write("Rest Time Remains : {0}", restTime.ToString("mm:ss"));
                 restTime = restTime.AddSeconds(-1);
                 Thread.Sleep(1000);
                 Console.Clear();
             }
+            Console.WriteLine("Work time ended, time to rest...");   
+            Console.Beep(3000, 1000);
+            DateTime restEndTime = DateTime.Now;
+            worktimeLog.Add(Convert.ToString("Rest end instance: " + restEndTime));
+        }
 
+
+        public void getWorkLog()
+        {
+            foreach(var workLog in worktimeLog)
+            {
+                Console.WriteLine(workLog);
+            }
         }
     }
 }
