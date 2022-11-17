@@ -37,6 +37,7 @@ namespace Pomdro
             var workTime = new DateTime(2000, 1, 1, 0, workTimer, 0);
             DateTime workStartTime = DateTime.Now;
             worktimeLog.Add(Convert.ToString("Work start instance: " + workStartTime));
+
             for (int i = 0; i < workTimer * 60; i++)
             {
                 Console.Write("Work Time Remains : {0}", workTime.ToString("mm:ss"));
@@ -67,13 +68,30 @@ namespace Pomdro
             worktimeLog.Add(Convert.ToString("Rest end instance: " + restEndTime));
         }
 
-
         public void getWorkLog()
         {
             foreach(var workLog in worktimeLog)
             {
+                Console.WriteLine("=================================");
                 Console.WriteLine(workLog);
             }
+        }
+
+        public void controller()
+        {
+            bool isActive = true;
+          
+            while (isActive)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    startWork();
+                    startRest();
+                }
+
+                isActive = false;
+            }
+            getWorkLog();   
         }
     }
 }
