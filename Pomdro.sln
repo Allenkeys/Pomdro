@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomdro", "Pomdro\Pomdro.csproj", "{4D6D97DF-710F-49E0-B291-03E99207E9DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D6D97DF-710F-49E0-B291-03E99207E9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6D97DF-710F-49E0-B291-03E99207E9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6D97DF-710F-49E0-B291-03E99207E9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6D97DF-710F-49E0-B291-03E99207E9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {688D1443-EEAC-4C58-99F1-B7F71C85748E}
+	EndGlobalSection
+EndGlobal
