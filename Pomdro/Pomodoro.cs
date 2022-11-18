@@ -16,7 +16,7 @@ namespace Pomdro
         {
             Console.WriteLine("Please set work duration only in minutes: ");
             var workInputTimer = Console.ReadLine();
-            Console.WriteLine("Please set rest duration only in minutes");
+            Console.WriteLine("Please set rest duration   only in minutes");
             var restInputTimer = Console.ReadLine();
             try
             {
@@ -62,6 +62,7 @@ namespace Pomdro
                 restTime = restTime.AddSeconds(-1);
                 Thread.Sleep(1000);
                 Console.Clear();
+                caretColor();
             }
             Console.WriteLine("Work time ended, time to rest...");   
             Console.Beep(3000, 1000);
