@@ -44,6 +44,7 @@ namespace Pomdro
                 workTime = workTime.AddSeconds(-1);
                 Thread.Sleep(1000);
                 Console.Clear();
+                caretColor();
             }
             Console.Beep(2000, 1000);
             DateTime workEndTime = DateTime.Now;
@@ -77,10 +78,23 @@ namespace Pomdro
             }
         }
 
+        public void caretColor()
+        {
+            if(Console.ForegroundColor == ConsoleColor.White && Console.BackgroundColor == ConsoleColor.Black)
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
+            }
+        }
         public void controller()
         {
             bool isActive = true;
-          
+
             while (isActive)
             {
                 for (int i = 0; i < 3; i++)
@@ -91,7 +105,7 @@ namespace Pomdro
 
                 isActive = false;
             }
-            getWorkLog();   
+            getWorkLog();
         }
     }
 }
