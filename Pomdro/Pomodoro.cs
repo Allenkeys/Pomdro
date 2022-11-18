@@ -14,9 +14,9 @@ namespace Pomdro
 
         public void play()
         {
-            Console.WriteLine("Please set work duration: ");
+            Console.WriteLine("Please set work duration only in minutes: ");
             var workInputTimer = Console.ReadLine();
-            Console.WriteLine("Please set rest duration");
+            Console.WriteLine("Please set rest duration only in minutes");
             var restInputTimer = Console.ReadLine();
             try
             {
